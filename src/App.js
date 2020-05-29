@@ -36,6 +36,41 @@ const Roulette = () => {
 
   const formRef = useRef(null);
 
+  const names = [
+    "Jeronimo Castro",
+    "Wilson Alexander Moreno",
+    "Jhossept Kevin Garay",
+    "Mauricio Uribe",
+    "Hector Camilo Bermudez",
+    "Manuel Jose Melgarejo",
+    "Diego Alejandro Mejia",
+    "Maria Clara Londoño",
+    "Lizeth Carolina Sanchez",
+    "Fernando Serna",
+    "Gabriel Jaime Gomez",
+    "Sergio Armando Orjuela",
+    "Walter Andres Casas",
+    "Isabel Cristina Muñoz",
+    "Mateo Parra",
+    "Jose David Bedoya",
+    "Jonathan Davila",
+    "Alejandro Restrepo",
+    "Laura Cristina Martinez",
+    "Diana Carolina Alvarez",
+    "Jose David Romero",
+    "Daniel Felipe Garcia",
+    "Luisa Fernanda Castaño",
+    "Juan Camilo Calle",
+    "Katherine Castaño",
+    "Irene Margarita Ortiz",
+    "Leidy Carolina Gomez",
+    "Juan Camilo Acosta",
+    "Alejandro Areiza",
+    "Santiago Mondragon",
+    "Miguel Angel Mejia",
+    "Karen Durley Chavarro",
+  ];
+
   useEffect(() => {
     const turns = Math.floor(2 + Math.random() * 6) * 360;
     if (isRotating && choise !== undefined) {
@@ -118,16 +153,21 @@ const Roulette = () => {
       />
       <form ref={formRef} className="roulette" onSubmit={handleSubmit}>
         <label htmlFor="text">Nombre:</label>
-        <input
-          autoComplete="off"
-          type="text"
-          placeholder="Escribe aqui tu nombre"
+        <select
           id="name"
           name="entry.315403504"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => console.log(e.target.value)}
           required
-        />
+        >
+          <option value="" selected disabled>
+            Selecciona tu nombre...
+          </option>
+          {names.map((name, index) => (
+            <option key={index} value={name}>
+              {index + 1}. {name.toLowerCase()}
+            </option>
+          ))}
+        </select>
         <input
           type="text"
           name="entry.522641761"

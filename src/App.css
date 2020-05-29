@@ -351,21 +351,31 @@ body .roulette-container .roulette .arrow {
   }
 }
 
-body .roulette-container .roulette input {
+body .roulette-container .roulette input,
+body .roulette-container .roulette select {
   border-radius: 4px;
   border: solid 1px lightgray;
   -webkit-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
           box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
   outline: none;
+  width: 100%;
   padding: 8px 12px;
   margin-bottom: 16px;
   font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
-body .roulette-container .roulette input:focus {
+body .roulette-container .roulette input:focus,
+body .roulette-container .roulette select:focus {
   border-color: transparent;
   -webkit-box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.3);
           box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+body .roulette-container .roulette input option,
+body .roulette-container .roulette select option {
+  text-transform: capitalize;
+  font-size: 0.9rem;
 }
 
 body .roulette-container .roulette button {

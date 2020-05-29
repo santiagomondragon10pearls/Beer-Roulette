@@ -254,20 +254,29 @@ body {
         }
       }
 
-      & input {
+      & input,
+      & select {
         border-radius: 4px;
         border: solid 1px lightgray;
         box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
         outline: none;
 
+        width: 100%;
+
         padding: 8px 12px;
         margin-bottom: 16px;
 
         font-size: 1.2rem;
+        text-transform: uppercase;
 
         &:focus {
           border-color: transparent;
           box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.3);
+        }
+
+        & option {
+          text-transform: capitalize;
+          font-size: 0.9rem;
         }
       }
 
