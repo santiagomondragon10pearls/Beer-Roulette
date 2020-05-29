@@ -358,7 +358,9 @@ body .roulette-container .roulette select {
   -webkit-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
           box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
   outline: none;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 8px 12px;
   margin-bottom: 16px;
   font-size: 1.2rem;
