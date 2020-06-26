@@ -208,8 +208,8 @@ const App = () => {
         <h1 className="title">¡Hola!</h1>
         <p className="description">
           <b>10 Pearls</b> te invita a que asistas a la proxima integración el{" "}
-          <b>Viernes 29 de Mayo</b>, un tiempo de amistad, compañerismo, risas y
-          especialmente, nada de trabajo. La idea es que compartamos
+          <b>Viernes 26 de Junio</b>, un tiempo de amistad, compañerismo, risas
+          y especialmente, nada de trabajo. La idea es que compartamos
           virtualmente un tiempo diferente, acompañados de tu bebida favorita y
           muchos temas de conversación.
         </p>
