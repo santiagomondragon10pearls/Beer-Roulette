@@ -69,6 +69,7 @@ const Roulette = () => {
     "Santiago Mondragon",
     "Miguel Angel Mejia",
     "Karen Durley Chavarro",
+    "Sergio Alexander Gomez Peña",
   ];
 
   useEffect(() => {
