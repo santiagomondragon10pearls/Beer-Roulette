@@ -31,7 +31,7 @@ const Roulette = () => {
   const [startingPosition, setStartingPosition] = useState(0);
   const [rotation, setRotation] = useState(0);
   const [isRotating, setRotating] = useState(false);
-  const [choise, setChoise] = useState(undefined);
+  const [choice, setChoice] = useState(undefined);
   const [result, setResult] = useState("");
 
   const formRef = useRef(null);
@@ -74,8 +74,8 @@ const Roulette = () => {
 
   useEffect(() => {
     const turns = Math.floor(2 + Math.random() * 6) * 360;
-    if (isRotating && choise !== undefined) {
-      setRotation(turns + choise);
+    if (isRotating && choice !== undefined) {
+      setRotation(turns + choice);
       setResult("");
 
       setTimeout(() => {
@@ -94,7 +94,7 @@ const Roulette = () => {
       setTimeout(() => {
         setModalOpen(true);
         setButtonMsg("Volver a Girar");
-        setStartingPosition(choise);
+        setStartingPosition(choice);
         setRotating(false);
       }, 6200);
     }
@@ -103,26 +103,38 @@ const Roulette = () => {
   useEffect(() => {
     setResult("");
 
-    if (choise < 35) {
+    if (choice < 36) {
       setResult("Contar una anecdota graciosa");
-    } else if (choise > 90 && choise < 125) {
-      setResult("Proponer un juego NO virtual (Adivinanzas, Bingo, Stop, etc)");
-    } else if (choise > 180 && choise < 215) {
+    } else if (choice >= 36 && choice <= 72) {
+      setResult("Recomendar una Serie o Pelicula");
+    } else if (choice > 72 && choice < 108) {
+      setResult("Muéstranos tu Álbum de Fotos Familiar");
+    } else if (choice >= 108 && choice <= 144) {
+      setResult("Queremos que nos Muestres tu Lugar de Trabajo, tu familia.");
+    } else if (choice >= 144 && choice <= 180) {
       setResult(
-        "Proponer un juego virtual (Charadas, UNO, Buscar en internet)"
+        "Estar en la videollamada con una buena actitud y tu bebida favorita."
       );
-    } else if (choise > 270 && choise < 305) {
-      setResult("Recomendar una serie o pelicula que te haya gustado");
+    } else if (choice >= 180 && choice <= 216) {
+      setResult("Proponer un Juego (No Virtual)");
+    } else if (choice > 216 && choice < 252) {
+      setResult("Proponer un Juego Virtual");
+    } else if (choice >= 252 && choice <= 288) {
+      setResult("Pregunta lo que Quieras a tus Compañeros");
+    } else if (choice > 288 && choice < 324) {
+      setResult("Escoge la Opción que tu Quieras");
     } else {
       setResult(
         "Estar en la videollamada con una buena actitud y tu bebida favorita."
       );
     }
-  }, [choise, result]);
+
+    console.log(choice);
+  }, [choice, result]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setChoise(Math.floor(Math.random() * 361));
+    setChoice(Math.floor(Math.random() * 361));
     setRotating(true);
   };
 
@@ -208,9 +220,9 @@ const App = () => {
       <section className="information">
         <h1 className="title">¡Hola!</h1>
         <p className="description">
-          <b>10 Pearls</b> te invita a que asistas a la proxima integración el{" "}
-          <b>Viernes 26 de Junio</b>, un tiempo de amistad, compañerismo, risas
-          y especialmente, nada de trabajo. La idea es que compartamos
+          <b>10 Pearls</b> te invita a que asistas a la proxima integración este
+          <b> último viernes del mes</b>, un tiempo de amistad, compañerismo,
+          risas y especialmente, nada de trabajo. La idea es que compartamos
           virtualmente un tiempo diferente, acompañados de tu bebida favorita y
           muchos temas de conversación.
         </p>
